@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100');
+
+/********** Overall **********/
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+ul, li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+/********** Navigation Bar **********/
+
+.header {
+	display: table;
+	position: fixed;
+	width: 100%;
+	min-width: 500px;
+	height: 100px;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+#name {
+	display: table-cell;
+	background: #f4f4f4;
+	width: 50%;
+	vertical-align: middle;
+	font-size: 35px;
+}
+
+a {
+	text-decoration: none;
+	color:	#000000;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#name a {
+	margin: 0 50px 0 50px; /* top, right bottom left */
+}
+
+#main-nav {
+	display: table-cell;
+	background: #f4f4f4;
+	width: 50%;
+	vertical-align: middle;
+}
+
+#main-nav li {
+	float: right;
+    margin: 0 50px 0 0; /* top, right bottom left */
+}
+
+/********** Gallery **********/
+
+.gallery {
+	width: 100%;
+	margin: 145px 0 20px 135px; /* top, right bottom left */
+}
+
+.display {
+	float: left;
+	width: 23%;
+	margin: 0 0 25px 45px; /* top, right bottom left */
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+img+div {
+	text-align: center;
+}
+
+img:hover {
+	opacity: 0.5;
+	background-color: #f4f4f4;
+}
+
+/********** Slideshow **********/
+
+.ss-photo {
+	width: 100%;
+}
+
+/********** Profile **********/
+
+.profile {
+	width: 100%;
+	margin: 145px 0 20px 135px; /* top, right bottom left */
+}
+
+.profile-pic {
+	float: left;
+	width: 200px;
+	border-radius: 5px;
+	margin: 0 50px 25px 45px; /* top, right bottom left */
+}
+
+.profile-text {
+	width: 75%;
+	margin-left: 50px;
+	text-align: left; 
+}
+
+/********** Responsive **********/
+
+@media only screen and (max-width: 1100px){
+    .display {
+        float: left;
+        width: 31%;
+    }
+}
+
+@media only screen and (max-width: 750px){
+    .display {
+        width: 54%;
+        margin: 20px 30px 20px 30px; /* top, right bottom left */
+    }
+}
