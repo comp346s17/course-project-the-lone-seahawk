@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil');
+
+html, body {
+	font-family: 'Allerta Stencil', sans-serif;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	min-width:600px; /* suppose you want minimun width of 1000px */
+	width: auto !important;  /* Firefox will set width as auto */
+	width:600px; 
+}
+
+main {
+	overflow-x: hidden; 
+}
+
+ul, li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(210,180,60); /* gold */
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+/*@media only screen and (max-width: 1100px){
+    .gallery {
+        width: 31%;
+    }
+}
+
+@media only screen and (max-width: 750px){
+    .gallery {
+        width: 54%;
+    }
+}*/
+
+/**
+* Navigation Bar
+**/
+
+.navi-bar {
+	display: table;
+	position: fixed;
+	width: 100%;
+	min-width: 500px;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	height: 65px;
+	background-color: rgb(10,10,10);
+	opacity: 0.9;
+/*	border: black 1px solid;*/
+}
+
+.page-title {
+	display: table-cell;
+	width: 50%;
+	vertical-align: middle;
+	font-size: 35px;
+/*	border: black 1px solid;*/
+}
+
+.page-title a {
+	margin-left: 5%;
+}
+
+.dropdown {
+    display: table-cell;
+	vertical-align: middle;
+/*	border: black 1px solid;*/
+}
+
+#dropdown-button {
+    background-color: rgb(10,10,10);
+    color: rgb(210,180,60); /* gold */
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin-right: 5%;
+    height: 100%;
+}
+
+button:focus {
+	outline: 0;
+}
+
+/**
+* Footer
+**/
+
+.footer {
+	display: block;
+	height: 150px;
+	color: rgb(254,254,254);
+	background-color: black;
+	text-align: center;
+}
+
+.footer div {
+	padding-top: 100px;
+}
+
+.copyright {
+	color: rgb(210,180,60);
+}
+
+/**
+* Dropdown menu screen
+**/
+
+.dropdown-menu {
+	background-color: rgb(254,254,254); /* grey */
+	opacity: 0.9;
+	position: fixed;
+	display: table;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	z-index: 999; /* behind the navi bar */
+	display: none;
+}
+
+.dropdown-menu div {
+	margin-top: 15%;
+}
+
+.dropdown-menu div a {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+	float: left;
+	top: 500px;
+	font-size: 30px;
+	padding: 10px;
+/*	border: black 1px solid;*/
+}
+
+.dropdown-menu div a:hover {
+	text-decoration: underline;
+}
+
+/**
+* Slideshow view
+* Reference: https://www.w3schools.com/howto/howto_js_slideshow.asp
+**/
+
+.slide-img {
+	display: block;
+    margin: auto;
+	height: 100vh;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+	position: relative;
+	margin: auto;
+	background-color: black;
+}
+
+.slide {
+    display: none;
+}
+
+/* Caption text and scroll arrow */
+.slide-title {
+	color: rgb(210,180,60); /* gold */
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 2%;
+}
+
+.scroll-arrow {
+	cursor: pointer;
+	color: rgb(210,180,60); /* gold */
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 10%;
+	font-size: 75px;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.scroll-target {
+	bottom: 65px;
+	position: absolute;
+}
+
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/**
+* Gallery View 
+* Margins = | 3 |   30   | 2 |   30   | 2 |   30   | 3 |
+**/
+
+.gallery {
+	width: 100%;
+	margin-left: 3%;
+	margin-top: 100px;
+}
+
+.grid-sizer, .grid-item {
+	width: 30%;
+	cursor: pointer;
+}
+
+.gutter-sizer {
+	width: 2%;
+}
+
+.grid-item {
+	margin-bottom: 2%;
+	float: left;
+}
+
+.grid-item img {
+	display: block;
+	width: 100%;
+	/*	border-radius: 5px;*/
+}
+
+.img-title {
+	text-align: center;
+	color: rgb(210,180,60); /* gold */
+}
+
+.img-series {
+	text-align: center;
+	opacity: 0.5;
+	font-size: 12px;
+}
+
+.grid-item img:hover {
+	background-color: rgb(240,240,240); /* grey */
+	opacity: 0.9;
+}
+
+.search-bar {
+	width: 85%;
+	margin: 3%;
+	height: 30px;
+	font-size: 30px;
+}
+
+/*********** Instagram Gallery **********/
+
+.insta-img {
+	width: 100%;
+}
+
+.insta-img img {
+	object-fit: cover;
+	float: left;
+	width: 33.33%;
+}
+
+.insta-img img:hover {
+	background-color: rgb(240,240,240); /* grey */
+	opacity: 0.9;
+}
+/*********** Recent Gallery **********/
+.recent-gallery {
+	width: 100%;
+	margin-left: 3%;
+}
+
+.recent h1 {
+	font-size: 30px;
+	text-align: center;
+	color: rgb(210,180,60); /* gold */
+	vertical-align: middle;
+}
+
+/**
+* About Page
+**/
+
+.profile {
+	width: 100%;
+	margin: 145px 0 20px 135px; /* top, right bottom left */
+}
+
+.profile-pic {
+	float: initial;
+	width: 200px;
+	border-radius: 5px;
+	margin: 0 50px 25px 45px; /* top, right bottom left */
+}
+
+.profile-text {
+	width: 75%;
+	margin-left: 50px;
+	text-align: left; 
+}

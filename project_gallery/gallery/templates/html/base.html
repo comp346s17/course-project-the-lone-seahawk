@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tianyi Liu | Photography</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="/static/js/app.js"></script>
+</head>
+<body>
+<!-- Navigation Bar -->
+	<div class="navi-bar fade">
+		<div class="page-title"><a href="/"> TIANYI LIU | PHOTOGRAPHY </a></div>
+		<div class="dropdown"><button id="dropdown-button"> ☰ </button></div>
+	</div>
+<!-- Dropdown Menu -->
+	<div class="dropdown-menu">
+		<div>
+			<a href="/"> MAIN </a>
+			<a href="/about"> ABOUT </a>
+			<a href="/gallery"> GALLERY </a>
+			<a href="/instagram"> INSTAGRAM </a>
+		</div>
+	</div>
+<!-- Content -->
+	<main>
+		{% block content %}
+		{% endblock %}
+	</main>
+<!-- Footer -->
+	<section class="footer">
+		<div><a href="https://www.facebook.com/tianyi.liu.92798"> Facebook </a> | 
+		<a href="https://www.instagram.com/tenichiliu/?hl=en"> Instagram </a> | 
+		<span class="copyright"> © Copyright 2017 Tianyi Liu </span></div>
+	</section>
+<body>
+<html>

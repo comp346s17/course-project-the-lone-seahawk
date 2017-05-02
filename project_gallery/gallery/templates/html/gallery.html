@@ -1,0 +1,21 @@
+{% extends 'html/base.html' %}
+
+{% block content %}
+<section class="gallery">
+	{% if photos %}
+        <ul class="grid">
+    	{% for photo in photos %}
+            <div class="grid-sizer"></div>
+            <div class="gutter-sizer"></div>
+        	<li class="grid-item">
+        		<a href="/uploads/{{photo.image}}"><img src="/uploads/{{photo.image}}"></a>
+        		<div class="img-title">{{photo.title}}</div>
+                <div class="img-series">{{photo.series}}</div>
+        	</li>
+    	{% endfor %}
+    	</ul>
+	{% else %}
+    	<h3> No photos available. </h3>
+	{% endif %}
+</section>
+{% endblock %}
