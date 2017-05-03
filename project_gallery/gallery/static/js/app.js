@@ -1,13 +1,12 @@
 $(document).ready(function() {
-    
+
     var url = window.location.href;
 
-    if (url == 'http://127.0.0.1:8000/') { /***** CHANGE THE URL AFTER PUBLISHING *****/
-
 /**
-* Automatic sldieshow
+* Automatic sldieshow (landing page)
 * Referece: https://www.w3schools.com/howto/howto_js_slideshow.asp
-**/
+**/ 
+    if (url == 'http://127.0.0.1:8000/') { /***** CHANGE THE URL AFTER PUBLISHING *****/
 
         var slideIndex = 0;
         showSlides();
@@ -34,6 +33,13 @@ $(document).ready(function() {
         }
     }
 
+/**
+* Show the filter dropdown option on gallery page
+**/
+
+    if (url == 'http://127.0.0.1:8000/gallery/') { /***** CHANGE THE URL AFTER PUBLISHING *****/
+        $('.filter-search').css('display', 'block');
+    }
 /**
 * Get photos from an instagram page
 * Reference: https://rudrastyh.com/javascript/get-photos-from-instagram.html
@@ -62,6 +68,20 @@ $(document).ready(function() {
         }
     });
 
+// /**
+// * Filter gallery photos by series name
+// **/
+
+//     $.ajax({
+//         type:   "POST",
+//         url:    "/gallery/",
+
+//         success: function(response) {
+//             var filter = $('.filter-search').val();
+//             console.log(filter);
+//         }
+//     });
+
 /**
 * Mansory.js for grid view
 **/
@@ -73,7 +93,20 @@ $(document).ready(function() {
             percentPosition: true,
             columnWidth: '.grid-sizer',
             gutter: '.gutter-sizer',
-        }); 
+        });
+        // .sortable({
+        //     start: function (e, ui) {
+        //         ui.item.removeClass('grid-item');
+        //         $(".grid").masonry('reload');
+        //     },
+        //     change: function (e, ui) {
+        //         $(".grid").masonry('reload');
+        //     },
+        //     stop: function (e, ui) {
+        //         ui.item.addClass('grid-item');
+        //         $(".grid").masonry('reload');
+        //     }
+        // }); 
     });  
 
 /**
@@ -93,16 +126,6 @@ $(document).ready(function() {
             button.text('☰');
         }
     })
-
-/**
-* Make gallery (grid) images sortable
-**/
-
-    $( function() {
-        $(".grid").sortable({
-            tolerance: "pointer"
-        });
-    });
 
 /**
 * Add scrolling animation for clicking scroll arrow on slideshow

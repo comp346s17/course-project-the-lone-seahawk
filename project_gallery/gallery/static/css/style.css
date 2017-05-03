@@ -6,9 +6,6 @@ html, body {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
-	min-width:600px; /* suppose you want minimun width of 1000px */
-	width: auto !important;  /* Firefox will set width as auto */
-	width:600px; 
 }
 
 main {
@@ -28,6 +25,11 @@ a {
     white-space: nowrap;
     text-overflow: ellipsis;
     cursor: pointer;
+}
+
+/* remove the ugly blue outline */
+*:focus {
+	outline: 0 !important;
 }
 
 /*@media only screen and (max-width: 1100px){
@@ -57,7 +59,6 @@ a {
 	height: 65px;
 	background-color: rgb(10,10,10);
 	opacity: 0.9;
-/*	border: black 1px solid;*/
 }
 
 .page-title {
@@ -65,7 +66,6 @@ a {
 	width: 50%;
 	vertical-align: middle;
 	font-size: 35px;
-/*	border: black 1px solid;*/
 }
 
 .page-title a {
@@ -75,8 +75,9 @@ a {
 .dropdown {
     display: table-cell;
 	vertical-align: middle;
-/*	border: black 1px solid;*/
 }
+
+/*********** Menu Dropdown **********/
 
 #dropdown-button {
     background-color: rgb(10,10,10);
@@ -89,8 +90,23 @@ a {
     height: 100%;
 }
 
-button:focus {
-	outline: 0;
+/*********** Filter Search Dropdown **********/
+
+form {
+	height: 100%;
+	float: right;
+}
+
+.filter-search {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 20px;
+    height: 100%;
+    border-radius: 0;
+    width: 75px;
+    margin-right: 15px;
+    background-color: rgb(10,10,10);
+    border: none;
+    color: rgb(210,180,60);
 }
 
 /**
@@ -142,7 +158,6 @@ button:focus {
 	top: 500px;
 	font-size: 30px;
 	padding: 10px;
-/*	border: black 1px solid;*/
 }
 
 .dropdown-menu div a:hover {
@@ -227,7 +242,6 @@ button:focus {
 .gallery {
 	width: 100%;
 	margin-left: 3%;
-	margin-top: 100px;
 }
 
 .grid-sizer, .grid-item {
@@ -266,11 +280,14 @@ button:focus {
 	opacity: 0.9;
 }
 
-.search-bar {
-	width: 85%;
-	margin: 3%;
-	height: 30px;
+/*********** Section Title **********/
+
+.section-title h1 {
 	font-size: 30px;
+	text-align: center;
+	color: rgb(210,180,60); /* gold */
+	vertical-align: middle;
+	margin-top: 90px;
 }
 
 /*********** Instagram Gallery **********/
@@ -290,16 +307,10 @@ button:focus {
 	opacity: 0.9;
 }
 /*********** Recent Gallery **********/
+
 .recent-gallery {
 	width: 100%;
 	margin-left: 3%;
-}
-
-.recent h1 {
-	font-size: 30px;
-	text-align: center;
-	color: rgb(210,180,60); /* gold */
-	vertical-align: middle;
 }
 
 /**

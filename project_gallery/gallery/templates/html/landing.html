@@ -13,7 +13,7 @@
 		<div class="scroll-target"></div>
 	</div>
 </section>
-<section class="recent">
+<section class="section-title">
 	<h1> Recent </h1>
 	<div class="recent-gallery">
 	{% if photos %}
@@ -24,6 +24,7 @@
         	<li class="grid-item">
         		<a href="/uploads/{{photo.image}}"><img src="/uploads/{{photo.image}}"></a>
         		<div class="img-title">{{photo.title}}</div>
+        		<div class="img-series">{{photo.series}}</div>
         	</li>
     	{% endfor %}
     	</ul>

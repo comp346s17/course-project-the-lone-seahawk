@@ -4,11 +4,6 @@ from django.contrib.auth.models import User # logged-in user
 
 # Create your models here.
 
-# Class Tag(models.Model):
-# 	street = models.BooleanField()
-# 	blackwhite = models.BooleanField()
-# 	workplace = models.BooleanField()
-
 class Photo(models.Model):
 	image = models.ImageField()
 	artist = models.ForeignKey(User)
