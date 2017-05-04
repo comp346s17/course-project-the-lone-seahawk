@@ -1,6 +1,6 @@
 # tianyiliu.com
 
-tianyiliu.com is an interactive photo gallery website that hosts photos taken by Tianyi Liu.
+tianyiliu.com is an interactive photo gallery website that hosts photos taken by Tianyi Liu. Use the navigation bar at the top of the page  to navigate through the webapp.
 
 To access the project . . .
 1) Clone a copy of the project
