@@ -3,11 +3,11 @@
 <head>
 	<title>Tianyi Liu | Photography</title>
 <!-- Jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<!-- Mansory -->
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-	<script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<!-- Packery & Imageloaded -->
+	<script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
+	<script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
 <!-- Angular -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
 <!-- Static Files -->
@@ -23,7 +23,7 @@
 			<!-- Filter Sort Dropdown -->	
 			<form method="POST" >
 			    {% csrf_token %}
-			    <select class="filter-search" name="tag" onchange="this.form.submit()" style="display: none">
+			    <select class="filter-search" name="tag" style="display: none"> 
 			        <option value="-1"> ALL </option>
 			        {% for s in series %}
 			        <option value="{{s}}" {% if preselected == s %} selected {% endif %} > {{s}} </option>

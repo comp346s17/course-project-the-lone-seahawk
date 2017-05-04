@@ -32,17 +32,27 @@ a {
 	outline: 0 !important;
 }
 
-/*@media only screen and (max-width: 1100px){
-    .gallery {
-        width: 31%;
+/* 2 columns */
+@media only screen and (max-width: 1000px){
+    .grid-sizer, .grid-item{
+    	width: 46% !important;
+    }
+
+    .insta-img img {
+    	width: 50% !important;
     }
 }
 
-@media only screen and (max-width: 750px){
-    .gallery {
-        width: 54%;
+/* 1 column */
+@media only screen and (max-width: 600px){
+    .grid-sizer, .grid-item {
+    	width: 94% !important;
     }
-}*/
+
+    .insta-img img {
+    	width: 100% !important;
+    }
+}
 
 /**
 * Navigation Bar
@@ -102,11 +112,12 @@ form {
     font-size: 20px;
     height: 100%;
     border-radius: 0;
-    width: 75px;
     margin-right: 15px;
     background-color: rgb(10,10,10);
     border: none;
     color: rgb(210,180,60);
+    cursor: pointer;
+    text-align-last:right;
 }
 
 /**
@@ -193,9 +204,9 @@ form {
 	color: rgb(210,180,60); /* gold */
 	font-size: 15px;
 	padding: 8px 12px;
+	margin-left: 3%; 
 	position: absolute;
 	width: 100%;
-	text-align: center;
 	bottom: 2%;
 }
 
@@ -280,6 +291,9 @@ form {
 	opacity: 0.9;
 }
 
+.grid-item--large {
+  width: 60%;
+}
 /*********** Section Title **********/
 
 .section-title h1 {
@@ -288,6 +302,8 @@ form {
 	color: rgb(210,180,60); /* gold */
 	vertical-align: middle;
 	margin-top: 90px;
+	width: 100%;
+	margin-left: -3%;
 }
 
 /*********** Instagram Gallery **********/
@@ -306,31 +322,36 @@ form {
 	background-color: rgb(240,240,240); /* grey */
 	opacity: 0.9;
 }
-/*********** Recent Gallery **********/
 
-.recent-gallery {
+.insta-title h1 {
+	font-size: 30px;
+	text-align: center;
+	color: rgb(210,180,60); /* gold */
+	vertical-align: middle;
+	margin-top: 90px;
+	width: 100%;
+}
+/*********** Featured Gallery **********/
+
+.featured-gallery {
 	width: 100%;
 	margin-left: 3%;
+}
+
+.featured h1 {
+	font-size: 30px;
+	text-align: center;
+	color: rgb(210,180,60); /* gold */
+	vertical-align: middle;
+	margin-left: -3%;
 }
 
 /**
 * About Page
 **/
 
-.profile {
-	width: 100%;
-	margin: 145px 0 20px 135px; /* top, right bottom left */
-}
-
-.profile-pic {
-	float: initial;
-	width: 200px;
-	border-radius: 5px;
-	margin: 0 50px 25px 45px; /* top, right bottom left */
-}
-
 .profile-text {
-	width: 75%;
-	margin-left: 50px;
-	text-align: left; 
+	width: 100%;
+	text-align: center; 
+	margin-bottom: 3%; 
 }

@@ -68,46 +68,83 @@ $(document).ready(function() {
         }
     });
 
-// /**
-// * Filter gallery photos by series name
-// **/
-
-//     $.ajax({
-//         type:   "POST",
-//         url:    "/gallery/",
-
-//         success: function(response) {
-//             var filter = $('.filter-search').val();
-//             console.log(filter);
-//         }
-//     });
-
 /**
-* Mansory.js for grid view
+* Packery.js for grid view
 **/
 
-    // init Masonry after all images have loaded
+    // initalize Packery after all images have loaded
     var $grid = $('.grid').imagesLoaded( function() {
-        $grid.masonry({
+        $grid.packery({
             itemSelector: '.grid-item',
             percentPosition: true,
             columnWidth: '.grid-sizer',
             gutter: '.gutter-sizer',
         });
-        // .sortable({
-        //     start: function (e, ui) {
-        //         ui.item.removeClass('grid-item');
-        //         $(".grid").masonry('reload');
-        //     },
-        //     change: function (e, ui) {
-        //         $(".grid").masonry('reload');
-        //     },
-        //     stop: function (e, ui) {
-        //         ui.item.addClass('grid-item');
-        //         $(".grid").masonry('reload');
-        //     }
-        // }); 
+        // make all items draggable
+        var $items = $grid.find('.grid-item').draggable();
+        // bind drag events to Packery
+        $grid.packery( 'bindUIDraggableEvents', $items );
     });  
+
+    $grid.on('click', '.grid-item', function( event ) {
+        // change size of item by toggling large class
+        $(event.currentTarget).toggleClass('grid-item--large');
+        // trigger shiftLayout after item size changes
+        $grid.packery('layout');
+    });
+
+/**
+* Filter gallery photos by series name
+**/
+    var removedItems = [];
+
+    $('.filter-search').change(function(){
+        $.ajax({
+            type:   "GET",
+            url:    "/gallery/",
+
+            success: function(response) {
+                // Add back any previously deleted items
+                console.log(removedItems.length);
+                for (i = 0; i < removedItems.length; i++) {
+                    // console.log(removedItems[i]);
+                    var itemHtml = '<li class="grid-item">' + removedItems[i] + '</li>';
+                    // console.log(itemHtml);
+                    var $item = $(itemHtml);
+                    $grid.append($item).packery('appended', $item);
+
+                    // apply draggable again
+                    var $items = $grid.find('.grid-item').draggable();
+                    $grid.packery( 'bindUIDraggableEvents', $items );
+                }
+
+                // Clear out deletedItems list
+                removedItems = [];
+                console.log(removedItems.length);
+
+                //Show only the filtered photos
+                var filter = $('.filter-search').val().replace(/\s+/g, '');
+                // console.log(filter);
+                
+                // if any filter is selected (not "ALL")
+                if (filter != -1) {
+                    var elems = $('.grid-item');
+                    // console.log(elems);
+                    jQuery.each(elems, function(i, val) {
+                        var series = $(val).children('.img-series').text().replace(/\s+/g, '');
+                        if (series != filter) {
+                            // keep track of the deleted items
+                            removedItems.push($(val).html());
+                            // delete item for both packery and html
+                            $grid.packery('remove', $(val))
+                            $(val).remove();
+                        }
+                    });
+                }
+                $grid.packery('shiftLayout');
+            }
+        });
+    });
 
 /**
 * Show or hide dropdown menu

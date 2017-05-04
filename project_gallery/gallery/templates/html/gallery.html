@@ -4,11 +4,11 @@
 <section class="gallery">
     <div class="section-title"><h1> GALLERY </h1></div>
     <ul class="grid">
+       <div class="grid-sizer"></div>
+       <div class="gutter-sizer"></div>
     {% for photo in photos %}
-        <div class="grid-sizer"></div>
-        <div class="gutter-sizer"></div>
         <li class="grid-item">
-            <a href="/uploads/{{photo.image}}"><img src="/uploads/{{photo.image}}"></a>
+            <img src="/uploads/{{photo.image}}">
             <div class="img-title"> {{photo.title}} </div>
             <div class="img-series"> {{photo.series}} </div>
         </li>

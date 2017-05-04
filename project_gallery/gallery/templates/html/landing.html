@@ -4,33 +4,33 @@
 <section class="slideshow">
 	<div class="slideshow-container">
     	{% for photo in photos %}
-		<div class="slide fade">
-	    	<img class="slide-img" src="/uploads/{{photo.image}}"/>
-	    	<div class="scroll-arrow"> ⌃ </div>
-	    	<div class="slide-title">{{photo.title}}<br>{{forloop.counter}} / {{photos|length}}</div>
-		</div>
+    	{% if photo.featured %}
+			<div class="slide fade">
+		    	<img class="slide-img" src="/uploads/{{photo.image}}"/>
+		    	<div class="scroll-arrow"> ⌃ </div>
+		    	<div class="slide-title"> {{photo.title}} <!-- <br> {{forloop.counter}} / {{photos|length}} --> </div> 
+			</div>
+	    {% endif %}
 		{% endfor %}
 		<div class="scroll-target"></div>
 	</div>
 </section>
-<section class="section-title">
-	<h1> Recent </h1>
-	<div class="recent-gallery">
-	{% if photos %}
+<section class="featured">
+	<h1> Featured </h1>
+	<div class="featured-gallery">
         <ul class="grid">
     	{% for photo in photos %}
-            <div class="grid-sizer"></div>
-            <div class="gutter-sizer"></div>
-        	<li class="grid-item">
-        		<a href="/uploads/{{photo.image}}"><img src="/uploads/{{photo.image}}"></a>
-        		<div class="img-title">{{photo.title}}</div>
-        		<div class="img-series">{{photo.series}}</div>
-        	</li>
+    		{% if photo.featured %}
+	            <div class="grid-sizer"></div>
+	            <div class="gutter-sizer"></div>
+	        	<li class="grid-item">
+	        		<a href="/uploads/{{photo.image}}"><img src="/uploads/{{photo.image}}"></a>
+	        		<div class="img-title">{{photo.title}}</div>
+	        		<div class="img-series">{{photo.series}}</div>
+	        	</li>
+	        {% endif %}
     	{% endfor %}
     	</ul>
-	{% else %}
-    	<h3> No photos available. </h3>
-	{% endif %}
 	</div>
 </section>
 {% endblock %}
